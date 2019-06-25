@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>WebSocket Clock</title>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/popper.js/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+	<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+	<script src="/js/home.js"></script> 	
+</head>
+
+<body>
+<div class="container">
+<h1 class="display-4">WebSocket demo</h1>
+<div class="jumbotron">
+  <h1 class="display-2"><span id="clock"></span>&nbsp;</h1>
+  <p>The above clock should update:</p>
+  <ul>
+  <li>When the page is loaded.</li>
+  <li>When the force update button is clicked on this browser.</li>
+  <li>When the force update button is clicked on any other browser 
+  (since the request to the server causes a push to all clients).</li>
+  <li>When the server is scheduled to push the time (every 5 seconds).</li>
+  </ul>
+  <p>N.B. The auto-update is deliberately slow so that forced updates can be observed.</p>
+</div>
+<button id="update" class="btn btn-primary">Force Update</button>
+</div>
+</body>
+</html>
