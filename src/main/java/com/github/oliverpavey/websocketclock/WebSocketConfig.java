@@ -30,7 +30,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 	 */
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("websocket-clock").withSockJS();
+		registry.addEndpoint("websocket-clock")
+		.setAllowedOrigins("*") // Allow connections from other web-sites
+		.withSockJS();
 	}
 
 }
